@@ -6,7 +6,34 @@
   <body>
     <%- include('../partials/nav') %>
 
-    <div class="container mb-3">
+
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card-columns">
+
+        <% posts.forEach(function(post) { %>
+          <div class="card-title">
+            <div class="card card-pin">
+              <img class="card-img" src="<%= post.serverFileName %>" alt="Card image">
+              <div class="overlay color-red">
+                <h2 class="card-title title">.</h2>
+                <div class="more">
+                  <a href="post.html">
+                    <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+                </div>
+              </div>
+            </div>
+            <p><%= post.title %></p>
+          </div>
+        <% }) %>
+        
+      </div>
+    </div>
+  </div>
+
+<!--
+     <div class="container mb-3">
 
       <h2 class="mb-3">Board</h2>
 
@@ -58,7 +85,7 @@
         </tbody>
 
       </table>
-
+-->
       <div class="row mb-3">
 
         <div class="col-2">
@@ -123,6 +150,12 @@
         </div>
       </form>
 
-    </div>
+    </div> 
+
+
+
+
+
+
   </body>
 </html>

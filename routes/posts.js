@@ -60,7 +60,8 @@ router.get('/', async function(req, res){
           numId: 1,
           attachment: { $cond: [{$and: ['$attachment', {$not: '$attachment.isDeleted'}]}, true, false] },
           createdAt: 1,
-          commentCount: { $size: '$comments'}
+          commentCount: { $size: '$comments'},
+          serverFileName: '$attachment.serverFileName'
       } },
     ]).exec();
   }
